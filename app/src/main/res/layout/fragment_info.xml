@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:context=".fragment.InfoFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp">
+
+        <include
+            android:id="@+id/tbInfo"
+            layout="@layout/layout_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvEducationalInfo"
+            style="@style/LabelTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sub_title_educational_info"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toTopOf="@id/tvEducation"
+            app:layout_constraintStart_toStartOf="@id/glInfoStart"
+            app:layout_constraintTop_toBottomOf="@id/tbInfo" />
+
+        <TextView
+            android:id="@+id/tvEducation"
+            style="@style/LabelTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_education"
+            app:layout_constraintBottom_toTopOf="@id/llEducation"
+            app:layout_constraintStart_toStartOf="@id/glInfoStart"
+            app:layout_constraintTop_toBottomOf="@id/tvEducationalInfo" />
+
+
+        <LinearLayout
+            android:id="@+id/llEducation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_input_fields"
+            app:layout_constraintEnd_toEndOf="@id/glInfoEnd"
+            app:layout_constraintStart_toStartOf="@id/glInfoStart"
+            app:layout_constraintTop_toBottomOf="@id/tvEducation">
+
+            <Spinner
+                android:id="@+id/spnEducation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvYearOfPassing"
+            style="@style/LabelTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_year_of_passing"
+            app:layout_constraintBottom_toTopOf="@id/llYearOfPassing"
+            app:layout_constraintStart_toStartOf="@id/glInfoStart"
+            app:layout_constraintTop_toBottomOf="@id/llEducation" />
+
+        <LinearLayout
+            android:id="@+id/llYearOfPassing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_input_fields"
+            app:layout_constraintEnd_toEndOf="@id/glInfoEnd"
+            app:layout_constraintStart_toStartOf="@id/glInfoStart"
+            app:layout_constraintTop_toBottomOf="@id/tvYearOfPassing">
+
+            <Spinner
+                android:id="@+id/spnYearOfPassing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvGrade"
+            style="@style/LabelTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_grade"
+            app:layout_constraintBottom_toTopOf="@id/edtGrade"
+            app:layout_constraintStart_toStartOf="@id/glInfoStart"
+            app:layout_constraintTop_toBottomOf="@id/llYearOfPassing" />
+
+        <EditText
+            android:id="@+id/edtGrade"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_input_fields"
+            android:padding="10dp"
+            android:hint="@string/hint_grade"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="@id/glInfoEnd"
+            app:layout_constraintStart_toStartOf="@id/glInfoStart"
+            app:layout_constraintTop_toBottomOf="@id/tvGrade" />
+
+        <View
+            android:id="@+id/vLine"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/hintColor"
+            android:layout_marginVertical="20dp"
+            app:layout_constraintStart_toStartOf="@id/glInfoStart"
+            app:layout_constraintEnd_toEndOf="@id/glInfoEnd"
+            app:layout_constraintTop_toBottomOf="@id/edtGrade" />
+
+        <TextView
+            android:id="@+id/tvProfessionalInfo"
+            style="@style/LabelTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sub_title_professional_info"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toTopOf="@id/tvExperience"
+            app:layout_constraintStart_toStartOf="@id/glInfoStart"
+            app:layout_constraintTop_toBottomOf="@id/vLine" />
+
+        <TextView
+            android:id="@+id/tvExperience"
+            style="@style/LabelTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_experience"
+            app:layout_constraintBottom_toTopOf="@id/edtExperience"
+            app:layout_constraintStart_toStartOf="@id/glInfoStart"
+            app:layout_constraintTop_toBottomOf="@id/tvProfessionalInfo" />
+
+        <EditText
+            android:id="@+id/edtExperience"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_input_fields"
+            android:padding="10dp"
+            android:hint="@string/hint_experience"
+            android:inputType="number"
+            android:maxLength="2"
+            app:layout_constraintEnd_toEndOf="@id/glInfoEnd"
+            app:layout_constraintStart_toStartOf="@id/glInfoStart"
+            app:layout_constraintTop_toBottomOf="@id/tvExperience" />
+
+        <TextView
+            android:id="@+id/tvDesignation"
+            style="@style/LabelTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_designation"
+            app:layout_constraintBottom_toTopOf="@id/llDesignation"
+            app:layout_constraintStart_toStartOf="@id/glInfoStart"
+            app:layout_constraintTop_toBottomOf="@id/edtExperience" />
+
+        <LinearLayout
+            android:id="@+id/llDesignation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_input_fields"
+            app:layout_constraintEnd_toEndOf="@id/glInfoEnd"
+            app:layout_constraintStart_toStartOf="@id/glInfoStart"
+            app:layout_constraintTop_toBottomOf="@id/tvDesignation">
+
+            <Spinner
+                android:id="@+id/spnDesignation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvDomain"
+            style="@style/LabelTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_domain"
+            app:layout_constraintBottom_toTopOf="@id/llDomain"
+            app:layout_constraintStart_toStartOf="@id/glInfoStart"
+            app:layout_constraintTop_toBottomOf="@id/llDesignation" />
+
+        <LinearLayout
+            android:id="@+id/llDomain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_input_fields"
+            app:layout_constraintEnd_toEndOf="@id/glInfoEnd"
+            app:layout_constraintStart_toStartOf="@id/glInfoStart"
+            app:layout_constraintTop_toBottomOf="@id/tvDomain">
+
+            <Spinner
+                android:id="@+id/spnDomain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPrevious"
+            style="@style/PreviousButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/btn_previous"
+            app:layout_constraintEnd_toStartOf="@+id/btnInfoNext"
+            app:layout_constraintStart_toStartOf="@id/glInfoStart"
+            app:layout_constraintTop_toBottomOf="@id/llDomain" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnInfoNext"
+            style="@style/NextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@string/btn_next"
+            app:layout_constraintEnd_toEndOf="@id/glInfoEnd"
+            app:layout_constraintStart_toEndOf="@id/btnPrevious"
+            app:layout_constraintTop_toTopOf="@id/btnPrevious" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glInfoStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="40dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glInfoEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="40dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

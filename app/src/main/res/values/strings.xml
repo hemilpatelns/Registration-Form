@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">NeoStart</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_toolbar">Toolbar Title</string>
+    <string name="hint_first_name"><i>Enter your first name here</i></string>
+    <string name="hint_last_name"><i>Enter your last name here</i></string>
+    <string name="hint_phone_number"><i>Enter your 10 digit phone number</i></string>
+    <string name="hint_email"><i>Your email goes here</i></string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Password</string>
+    <string name="label_first_name">First Name*</string>
+    <string name="label_last_name">Last Name*</string>
+    <string name="label_phone_number">Phone Number*</string>
+    <string name="label_gender">Gender</string>
+    <string name="label_password">Password*</string>
+    <string name="label_confirm_password">Confirm Password</string>
+    <string name="label_email">Email*</string>
+    <string name="radio_gender_male">Male</string>
+    <string name="radio_gender_female">Female</string>
+    <string name="btn_next">Next</string>
+    <string name="title_register">Register</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_your_info">Your Info</string>
+    <string name="btn_previous">Previous</string>
+    <string name="sub_title_educational_info">Educational Info</string>
+    <string name="label_education">Education*</string>
+    <string name="label_year_of_passing">Year of Passing*</string>
+    <string name="label_grade">Grade</string>
+    <string name="hint_grade"><i>Enter your Grade or Percentage</i></string>
+    <string name="sub_title_professional_info">Professional Info</string>
+    <string name="label_experience">Experience*</string>
+    <string name="hint_experience"><i>Enter the years of experience</i></string>
+    <string name="label_designation">Designation*</string>
+    <string name="label_domain">Domain*</string>
+    <string name="title_your_address">Your Address</string>
+    <string name="hint_address"><i>Address</i></string>
+    <string name="hint_landmark"><i>Landmark</i></string>
+    <string name="hint_city"><i>City</i></string>
+    <string name="hint_pin_code"><i>Pin Code</i></string>
+    <string name="btn_submit">Submit</string>
+</resources>

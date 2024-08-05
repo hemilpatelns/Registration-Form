@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.AddressFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/tbAddress"
+            layout="@layout/layout_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edtAddress"
+            style="@style/HintTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_input_fields"
+            android:drawableStart="@drawable/ic_city"
+            android:drawablePadding="10dp"
+            android:hint="@string/hint_address"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            app:layout_constraintEnd_toStartOf="@id/glAddressEnd"
+            app:layout_constraintStart_toStartOf="@id/glAddressStart"
+            app:layout_constraintTop_toBottomOf="@id/tbAddress" />
+
+        <EditText
+            android:id="@+id/edtLandmark"
+            style="@style/HintTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_input_fields"
+            android:drawableStart="@drawable/ic_city"
+            android:drawablePadding="10dp"
+            android:hint="@string/hint_landmark"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            app:layout_constraintEnd_toStartOf="@id/glAddressEnd"
+            app:layout_constraintStart_toStartOf="@id/glAddressStart"
+            app:layout_constraintTop_toBottomOf="@id/edtAddress" />
+
+        <EditText
+            android:id="@+id/edtCity"
+            style="@style/HintTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_input_fields"
+            android:drawableStart="@drawable/ic_city"
+            android:drawablePadding="10dp"
+            android:hint="@string/hint_city"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            app:layout_constraintEnd_toStartOf="@id/glAddressEnd"
+            app:layout_constraintStart_toStartOf="@id/glAddressStart"
+            app:layout_constraintTop_toBottomOf="@id/edtLandmark" />
+
+        <LinearLayout
+            android:id="@+id/llState"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_input_fields"
+            app:layout_constraintEnd_toEndOf="@id/glAddressEnd"
+            app:layout_constraintStart_toStartOf="@id/glAddressStart"
+            app:layout_constraintTop_toBottomOf="@id/edtCity">
+
+            <Spinner
+                android:id="@+id/spnDomain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edtPinCode"
+            style="@style/HintTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_input_fields"
+            android:drawableStart="@drawable/ic_city"
+            android:drawablePadding="10dp"
+            android:hint="@string/hint_pin_code"
+            android:inputType="number"
+            android:maxLength="6"
+            android:padding="10dp"
+            app:layout_constraintEnd_toStartOf="@id/glAddressEnd"
+            app:layout_constraintStart_toStartOf="@id/glAddressStart"
+            app:layout_constraintTop_toBottomOf="@id/llState" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnRegisterNext"
+            style="@style/NextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="40dp"
+            android:text="@string/btn_submit"
+            app:layout_constraintEnd_toEndOf="@id/glAddressEnd"
+            app:layout_constraintStart_toStartOf="@id/glAddressStart"
+            app:layout_constraintTop_toBottomOf="@id/edtPinCode" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glAddressStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="40dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glAddressEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="40dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
