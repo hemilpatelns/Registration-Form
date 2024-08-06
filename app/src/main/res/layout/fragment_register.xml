@@ -60,7 +60,6 @@
 
         <EditText
             android:id="@+id/edtFirstName"
-            style="@style/HintTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -73,6 +72,14 @@
             app:layout_constraintEnd_toStartOf="@id/glEnd"
             app:layout_constraintStart_toStartOf="@id/glStart"
             app:layout_constraintTop_toBottomOf="@id/tvFirstName" />
+        <TextView
+            android:id="@+id/tvWarningFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/WarningTextStyle"
+            android:text="Must have more than 3 characters*"
+            app:layout_constraintTop_toBottomOf="@id/edtFirstName"
+            app:layout_constraintEnd_toEndOf="@id/glEnd"/>
 
         <TextView
             android:id="@+id/tvLastName"
@@ -86,7 +93,6 @@
 
         <EditText
             android:id="@+id/edtLastName"
-            style="@style/HintTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -112,7 +118,6 @@
 
         <EditText
             android:id="@+id/edtPhoneNumber"
-            style="@style/HintTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -139,7 +144,6 @@
 
         <EditText
             android:id="@+id/edtEmail"
-            style="@style/HintTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"

@@ -75,11 +75,12 @@
             app:layout_constraintTop_toBottomOf="@id/edtCity">
 
             <Spinner
-                android:id="@+id/spnDomain"
+                android:id="@+id/spnState"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:spinnerMode="dropdown" />
+                android:spinnerMode="dropdown"
+                style="@style/SpinnerStyle"/>
         </LinearLayout>
 
         <EditText

@@ -1,9 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.NeoStart" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.NeoStart" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimaryDark">@color/white</item>
         <item name="android:windowBackground">@color/white</item>
+        <item name="android:textColorHint">@color/hintColor</item>
 <!--         <item name="colorPrimary">@color/white</item>-->
     </style>
 
@@ -29,13 +30,13 @@
     </style>
 
     <style name="HintTextStyle">
-
+        <item name="android:textColorHint">@color/hintColor</item>
     </style>
 
     <style name="LabelTextStyle">
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_marginTop">20dp</item>
     </style>
 
     <style name="ToolbarStyle">
@@ -49,5 +50,13 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="SpinnerStyle">
+        <item name="android:dropDownVerticalOffset">45dp</item>
+        <item name="android:dropDownWidth">wrap_content</item>
+    </style>
+
+    <style name="WarningTextStyle">
+        <item name="android:textColor">@color/warningColor</item>
+    </style>
     <style name="Theme.NeoStart" parent="Base.Theme.NeoStart" />
 </resources>

@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        toggleColorOfStatusBarIcons(this)
+//        toggleColorOfStatusBarIcons(this)
 
 //        supportFragmentManager.beginTransaction()
 //            .replace(R.id.fcvHost, RegisterFragment())
@@ -34,18 +34,18 @@ class MainActivity : AppCompatActivity() {
 //
 //        findNavController(binding.fcvHost.id)
     }
-    private fun toggleColorOfStatusBarIcons(activity: Activity) {
-        val decorView = activity.window.decorView
-        val insetsController = WindowInsetsControllerCompat(activity.window, decorView)
-
-        // Get current system bars appearance
-        val currentAppearance = insetsController.isAppearanceLightStatusBars
-
-        // Toggle the appearance
-        if (currentAppearance) {
-            insetsController.isAppearanceLightStatusBars = false // Dark icons
-        } else {
-            insetsController.isAppearanceLightStatusBars = true // Light icons
-        }
-    }
+//    private fun toggleColorOfStatusBarIcons(activity: Activity) {
+//        val decorView = activity.window.decorView
+//        val insetsController = WindowInsetsControllerCompat(activity.window, decorView)
+//
+//        // Get current system bars appearance
+//        val currentAppearance = insetsController.isAppearanceLightStatusBars
+//
+//        // Toggle the appearance
+//        if (currentAppearance) {
+//            insetsController.isAppearanceLightStatusBars = false // Dark icons
+//        } else {
+//            insetsController.isAppearanceLightStatusBars = true // Light icons
+//        }
+//    }
 }

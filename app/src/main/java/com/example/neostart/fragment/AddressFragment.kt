@@ -10,6 +10,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.navigation.fragment.findNavController
 import com.example.neostart.R
 import com.example.neostart.databinding.FragmentAddressBinding
+import com.example.neostart.util.enums.State
+import com.example.neostart.util.setEnumAdapter
 
 class AddressFragment : Fragment() {
 
@@ -26,7 +28,9 @@ class AddressFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         setToolbar()
+        setStateSpinner()
     }
 
     override fun onDestroyView() {
@@ -47,6 +51,12 @@ class AddressFragment : Fragment() {
                 }
                 binding.tbAddress.tvToolbarTitle.text = getString(R.string.title_your_address)
             }
+        }
+    }
+
+    private fun setStateSpinner(){
+        binding.spnState.setEnumAdapter(State::class.java, {it.state}){ selectedState ->
+
         }
     }
 
