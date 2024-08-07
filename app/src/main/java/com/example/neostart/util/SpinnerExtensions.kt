@@ -41,6 +41,13 @@ import com.example.neostart.R
 //    }
 //}
 
+fun <T> Spinner.setAdapter(
+    items: List<T>,
+    onItemSelected: (T) -> Unit
+){
+
+}
+
 fun <T : Enum<T>> Spinner.setEnumAdapter(
     enumClass: Class<T>,
     displayItemSelector: (T) -> String,

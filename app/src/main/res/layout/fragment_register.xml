@@ -72,14 +72,6 @@
             app:layout_constraintEnd_toStartOf="@id/glEnd"
             app:layout_constraintStart_toStartOf="@id/glStart"
             app:layout_constraintTop_toBottomOf="@id/tvFirstName" />
-        <TextView
-            android:id="@+id/tvWarningFirstName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/WarningTextStyle"
-            android:text="Must have more than 3 characters*"
-            app:layout_constraintTop_toBottomOf="@id/edtFirstName"
-            app:layout_constraintEnd_toEndOf="@id/glEnd"/>
 
         <TextView
             android:id="@+id/tvLastName"
@@ -176,12 +168,14 @@
             app:layout_constraintTop_toBottomOf="@id/tvGender">
 
             <RadioButton
+                android:id="@+id/rbMale"
                 style="@style/RadioButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/radio_gender_male" />
 
             <RadioButton
+                android:id="@+id/rbFemale"
                 style="@style/RadioButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

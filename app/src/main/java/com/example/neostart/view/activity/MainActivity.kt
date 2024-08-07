@@ -1,4 +1,4 @@
-package com.example.neostart
+package com.example.neostart.view.activity
 
 import android.app.Activity
 import android.os.Bundle
@@ -11,7 +11,7 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.neostart.databinding.ActivityMainBinding
-import com.example.neostart.fragment.RegisterFragment
+import com.example.neostart.view.fragment.RegisterFragment
 
 class MainActivity : AppCompatActivity() {
 

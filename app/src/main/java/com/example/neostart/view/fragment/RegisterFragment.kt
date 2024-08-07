@@ -1,4 +1,4 @@
-package com.example.neostart.fragment
+package com.example.neostart.view.fragment
 
 import android.app.Activity
 import android.content.Context
@@ -26,9 +26,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.FileProvider
 import androidx.core.view.WindowInsetsControllerCompat
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.neostart.R
+import com.example.neostart.database.UserDatabase
 import com.example.neostart.databinding.FragmentRegisterBinding
+import com.example.neostart.model.Register
+import com.example.neostart.repository.UserRepository
+import com.example.neostart.viewmodel.UserViewModel
+import com.example.neostart.viewmodel.UserViewModelFactory
 import com.google.android.material.imageview.ShapeableImageView
 import java.io.File
 import java.io.FileOutputStream
@@ -43,6 +49,8 @@ class RegisterFragment : Fragment() {
     private lateinit var takePicture: ActivityResultLauncher<Uri>
     private lateinit var imageUri: Uri
     private val aspectRatio = 1.0f // Desired aspect ratio for cropping
+
+    private lateinit var userViewModel: UserViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -69,6 +77,8 @@ class RegisterFragment : Fragment() {
 
         binding.tbRegister.tvToolbarTitle.text = getString(R.string.title_register)
 
+        setViewModel()
+
         binding.imbShowHide.setOnClickListener {
             if (isPasswordVisible) {
                 binding.edtPassword.transformationMethod =
@@ -84,6 +94,20 @@ class RegisterFragment : Fragment() {
         }
 
         binding.btnRegisterNext.setOnClickListener {
+            val register = Register(
+                firstName = binding.edtFirstName.text.toString(),
+                lastName = binding.edtLastName.text.toString(),
+                phoneNumber = binding.edtPhoneNumber.text.toString(),
+                email = binding.edtEmail.text.toString(),
+                gender = when (binding.rgGender.checkedRadioButtonId) {
+                    binding.rbMale.id -> "Male"
+                    binding.rbFemale.id -> "Female"
+                    else -> ""
+                },
+                password = binding.edtPassword.text.toString(),
+                confirmPassword = binding.edtConfirmPassword.text.toString()
+            )
+            userViewModel.setRegisterData(register)
             findNavController().navigate(R.id.action_registerFragment_to_infoFragment)
         }
 
@@ -213,6 +237,30 @@ class RegisterFragment : Fragment() {
         } catch (e: Exception) {
             e.printStackTrace()
         }
+    }
+
+    private fun setViewModel() {
+        val database = UserDatabase.getDatabase(requireContext())
+        val repository =
+            UserRepository(database.registerDao(), database.infoDao(), database.addressDao())
+        val factory = ViewModelProvider(requireActivity(), UserViewModelFactory(repository))
+        userViewModel = factory[UserViewModel::class.java]
+
+        userViewModel.registerData.observe(viewLifecycleOwner) { registerEntity ->
+            if (registerEntity != null) {
+                binding.edtFirstName.setText(registerEntity.firstName)
+                binding.edtLastName.setText(registerEntity.lastName)
+                binding.edtPhoneNumber.setText(registerEntity.phoneNumber)
+                binding.edtEmail.setText(registerEntity.email)
+                when (registerEntity.gender) {
+                    "Male" -> binding.rgGender.check(binding.rbMale.id)
+                    "Female" -> binding.rgGender.check(binding.rbFemale.id)
+                }
+                binding.edtPassword.setText(registerEntity.password)
+                binding.edtConfirmPassword.setText(registerEntity.confirmPassword)
+            }
+        }
+
     }
 }
 

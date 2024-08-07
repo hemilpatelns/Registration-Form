@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.AddressFragment">
+    tools:context=".view.fragment.AddressFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -101,7 +101,7 @@
             app:layout_constraintTop_toBottomOf="@id/llState" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnRegisterNext"
+            android:id="@+id/btnSubmit"
             style="@style/NextButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

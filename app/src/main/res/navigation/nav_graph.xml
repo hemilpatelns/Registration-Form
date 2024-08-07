@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.neostart.fragment.RegisterFragment"
+        android:name="com.example.neostart.view.fragment.RegisterFragment"
         android:label="Register Fragment"
         tools:layout="@layout/fragment_register">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/infoFragment"
-        android:name="com.example.neostart.fragment.InfoFragment"
+        android:name="com.example.neostart.view.fragment.InfoFragment"
         android:label="Info Fragment"
         tools:layout="@layout/fragment_info">
         <action
@@ -30,7 +30,7 @@
 
     <fragment
         android:id="@+id/addressFragment"
-        android:name="com.example.neostart.fragment.AddressFragment"
+        android:name="com.example.neostart.view.fragment.AddressFragment"
         android:label="Address Fragment"
         tools:layout="@layout/fragment_address">
     </fragment>
